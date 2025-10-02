@@ -230,7 +230,6 @@ class Ellipse extends Shape {
         return Math.PI * this.radiusX * this.radiusY; // π * a * b
     }
 }
-
 class Star extends Shape {
     constructor(x, y, color) {
         super(x, y, color);
@@ -257,8 +256,6 @@ class Star extends Shape {
         return (5 * this.innerRadius * this.outerRadius * Math.sin(Math.PI / 5)); // (5 * r * R * sin(π/5))
     }
 }
-
-
 
 // initialize the PixiJS application
 function init() {
@@ -419,4 +416,3 @@ function updateStats() {
 
 // Start application when page loads
 window.addEventListener('load', init);
-
