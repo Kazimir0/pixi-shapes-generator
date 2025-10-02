@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>PixiJS Shapes Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="controls">
+
+            <div class="stats">
+
+                <div class="stat">
+                    <label> Number of current shapes:</label>
+                    <span id="shapeCount">0</span>
+                </div>
+                <div class="stat">
+                    <label> Surface Area Occupied:</label>
+                    <span id="surfaceArea">0</span><span class="unit-text"> px²</span>
+                </div>
+
+                <div class="controls-row">
+                    <div class="control-group">
+                        <label> Number of shapes per second:</label>
+                        <button id="decreaseRate">-</button>
+                        <span id="shapeRate">1</span>
+                        <button id="increaseRate">+</button>
+                    </div>
+
+                    <div class="control-group">
+                        <label> Gravity value:</label>
+                        <button id="decreaseGravity">-</button>
+                        <span id="gravityValue">1</span>
+                        <button id="increaseGravity">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameContainer"></div>
+    </div>
+
+    <script src="pixi.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

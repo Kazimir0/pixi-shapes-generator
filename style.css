@@ -1,0 +1,358 @@
+/*  BASE STYLES & RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CONTROLS PANEL */
+
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* STATISTICS SECTION */
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat label {
+    font-weight: bold;
+}
+
+.stat span {
+    background: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* CONTROL BUTTONS SECTION */
+
+.controls-row {
+    display: flex;
+    gap: 40px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group label {
+    font-weight: bold;
+}
+
+.control-group button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.control-group span {
+    background: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* GAME CONTAINER */
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* RESPONSIVE DESIGN - MOBILE FIRST */
+/* Medium screens - Tablets landscape (781px - 880px) */
+@media screen and (min-width: 781px) and (max-width: 880px) {
+    .container {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+
+    .controls {
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .stats {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .controls-row {
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .control-group {
+        gap: 8px;
+    }
+
+    .control-group button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .control-group label {
+        font-size: 13px;
+    }
+
+    #gameContainer {
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+/* Mobile & Small tablets (max-width: 780px) */
+@media screen and (max-width: 780px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .controls {
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* Stats vertical layout */
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    /* Controls vertical layout */
+    .controls-row {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    /* Touch-friendly buttons */
+    .control-group button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        font-weight: bold;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Responsive canvas with scaling */
+    #gameContainer {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        transform-origin: top center;
+        transform: scale(0.88);
+        margin-top: 0px;
+        margin-bottom: -50px;
+    }
+}
+
+/* Small phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 3px;
+    }
+
+    /* Hide unit text to save space */
+    .unit-text {
+        display: none;
+    }
+
+    .controls {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* More aggressive canvas scaling */
+    #gameContainer {
+        transform: scale(0.78);
+        margin-top: 0px;
+        margin-bottom: -90px;
+        transform-origin: top center;
+    }
+
+    .stat {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 8px;
+        font-size: 13px;
+        justify-content: space-between;
+    }
+
+    .control-group {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .control-group label {
+        width: auto;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        font-size: 13px;
+        flex: 1;
+    }
+
+    .control-group button {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .control-group span {
+        margin: 0 5px;
+        min-width: 30px;
+    }
+}
+
+/* Extra small phones (max-width: 400px) */
+@media screen and (max-width: 400px) {
+    body {
+        padding: 2px;
+    }
+
+    /* Hide unit text to save space */
+    .unit-text {
+        display: none;
+    }
+
+    .controls {
+        padding: 6px;
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .stats {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .controls-row {
+        gap: 10px;
+    }
+
+    /* Maximum canvas scaling for tiny screens */
+    #gameContainer {
+        transform: scale(0.65);
+        margin-top: 0px;
+        margin-bottom: -140px;
+        transform-origin: top center;
+    }
+
+    /* Compact stat styling */
+    .stat {
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .stat label {
+        font-size: 11px;
+    }
+
+    .stat span {
+        font-size: 12px;
+        padding: 3px 6px;
+        min-width: 40px;
+    }
+
+    /* Compact control group styling */
+    .control-group {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .control-group label {
+        font-size: 11px;
+        margin-right: 5px;
+        flex: 1;
+        text-align: left;
+    }
+
+    .control-group button {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .control-group span {
+        font-size: 13px;
+        margin: 0 3px;
+        min-width: 25px;
+        padding: 3px 6px;
+        flex-shrink: 0;
+    }
+}
