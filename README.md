@@ -1,6 +1,6 @@
 # PixiJS Shapes Generator 🎮
 
-An interactive web application that generates animated geometric shapes with physics simulation, built with PixiJS for a technical job interview.
+An interactive web application that generates animated geometric shapes with physics simulation, built with PixiJS
 
 ## 🌟 Features
 
@@ -33,45 +33,6 @@ An interactive web application that generates animated geometric shapes with phy
 - **Memory Leak Prevention**: Proper event listener cleanup
 - **Render Optimization**: `roundPixels` and device-specific settings
 - **Mobile Optimization**: Reduced antialiasing and scaling for better performance
-
-## 📱 Responsive Design
-
-- **Desktop (>880px)**: Full layout with all features
-- **Tablets (781px-880px)**: Optimized layout with flexible controls
-- **Mobile (≤780px)**: Vertical layout with touch-friendly buttons
-- **Small phones (≤480px)**: Compact design with hidden non-essential text
-- **Extra small (≤400px)**: Maximum space efficiency
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Modern web browser with JavaScript enabled
-- No additional installations required
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kazimir0/pixi-shapes-generator.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd pixi-shapes-generator
-   ```
-
-3. Open `index.html` in your web browser or serve with a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
-
-4. Visit `http://localhost:8000` in your browser
 
 ## 🎮 How to Use
 
@@ -107,15 +68,6 @@ Shape (Base Class)
 - **Statistics Engine**: Real-time area calculation and display
 - **Memory Manager**: Automatic cleanup and optimization
 
-## 📊 Technical Specifications
-
-- **Canvas Size**: 800x600px (responsive scaling)
-- **Frame Rate**: 60 FPS (30 FPS on mobile)
-- **Shape Limit**: 50 shapes (30 on mobile)
-- **Cleanup Threshold**: 50px below canvas
-- **Supported Shapes**: 7 geometric primitives
-- **Color Palette**: 7 predefined vibrant colors
-
 ## 🔧 Code Quality Features
 
 - **ES6+ Syntax**: Modern JavaScript patterns
@@ -143,12 +95,12 @@ Shape (Base Class)
 
 ## 🧪 Browser Support
 
-- **Chrome**: 90+ ✅
-- **Firefox**: 88+ ✅
-- **Safari**: 14+ ✅
-- **Edge**: 90+ ✅
-- **Mobile Safari**: 14+ ✅
-- **Chrome Mobile**: 90+ ✅
+- **Chrome**
+- **Firefox**
+- **Safari**
+- **Edge**
+- **Mobile Safari**
+- **Chrome Mobile**
 
 ## 📝 Development Notes
 
@@ -159,12 +111,5 @@ This project was built as a technical demonstration showcasing:
 - Object-oriented programming in JavaScript
 - Interactive graphics programming with PixiJS
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 👨‍💻 Author
-
-**Kazimir** - [GitHub Profile](https://github.com/Kazimir0)
-
--
+[GitHub Profile](https://github.com/Kazimir0)
