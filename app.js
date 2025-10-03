@@ -1,4 +1,4 @@
-// configuration settings for the PixiJS application
+// Configuration object - centralized settings (Module Pattern)
 const config = {
     width: 800,
     height: 600,
@@ -95,6 +95,7 @@ class Shape {
         }
     }
 
+    // template methods - each subclass implements these differently (Template Method Pattern)
     draw() {
         // to be implemented by subclasses
     }
@@ -121,6 +122,7 @@ class Triangle extends Shape {
         ]);
         this.graphics.endFill();
     }
+    // Triangle area calculation strategy (Strategy Pattern)
     getArea() {
         return (this.size * this.size) / 2; // base * height / 2
     }
@@ -129,7 +131,7 @@ class Triangle extends Shape {
 class Square extends Shape {
     constructor(x, y, color) {
         super(x, y, color);
-        this.size = 20 + Math.random() * 30; // random size between 20 and 50
+        this.size = 20 + Math.random() * 30;
         // Redraw after setting size
         this.draw();
     }
@@ -197,7 +199,7 @@ class Hexagon extends Shape {
 class Circle extends Shape {
     constructor(x, y, color) {
         super(x, y, color);
-        this.radius = 15 + Math.random() * 20; // Increased size
+        this.radius = 15 + Math.random() * 20; // increased size
         // Redraw after setting radius
         this.draw();
     }
@@ -207,6 +209,7 @@ class Circle extends Shape {
         this.graphics.drawCircle(0, 0, this.radius);
         this.graphics.endFill();
     }
+    // Circle area calculation strategy (Strategy Pattern)
     getArea() {
         return Math.PI * this.radius * this.radius; // π * r^2
     }
@@ -300,12 +303,12 @@ function gameLoop(delta) {
     updateStats();
 }
 
-// Setup event listeners for controls
+// Event listeners that observe user interactions and update UI (Observer Pattern)
 function setEventListeners() {
     // shape generation rate controls
     document.getElementById("increaseRate").addEventListener("click", () => {
         shapeGenerationRate = Math.min(shapeGenerationRate + 1, 10);
-        document.getElementById("shapeRate").textContent = shapeGenerationRate;
+        document.getElementById("shapeRate").textContent = shapeGenerationRate; // UI update
     });
 
     document.getElementById("decreaseRate").addEventListener("click", () => {
@@ -342,7 +345,7 @@ function setEventListeners() {
         // Prevent default to avoid double events and scrolling
         event.preventDefault();
 
-        // Don't generate shape if we just touched an existing shape
+        // don't generate shape if we just touched an existing shape
         if (shapeClickHandled) {
             return;
         }
@@ -364,16 +367,17 @@ function setEventListeners() {
     });
 }
 
-// Generate a random shape at random position
+// Factory method - creates shapes without specifying exact type (Factory Pattern)
 function generateRandomShape() {
     if (shapes.length >= MAX_SHAPES) {
         return; // do not generate if too many shapes
     }
     const x = Math.random() * config.width;
-    const y = 10; // Start at top of canvas (visible)
+    const y = -30; // start at top of canvas
     const colors = [0xff6b6b, 0x4ecdc4, 0x45b7d1, 0x96ceb4, 0xfeca57, 0xff9ff3, 0x54a0ff];
     const color = colors[Math.floor(Math.random() * colors.length)];
 
+    // Dynamic shape creation based on random selection
     const shapeTypes = [Triangle, Square, Pentagon, Hexagon, Circle, Ellipse, Star];
     const ShapeClass = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
 
